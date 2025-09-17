@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>링크 관련 태그</title>
+    <style>
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 8px 16px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+      }
+
+      li img {
+        margin-top: 5px;
+      }
+
+      li:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .long-link {
+        width: 100%;
+        height: 1000px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        list-style-type: none;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #1a1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      * <a></a>
+      1) 다른 곳으로 이동할 수 있는 링크를 만들어주는 태그 (anchor 태그)
+      2) 인라인 요소
+      3) 형식
+          <a href="" target="">노출시킬내용</a>
+      4) 주요 속성
+          → href   : 링크 클릭시 이동할 경로 작성 (파일, URL 등)
+          → target : 어느 창에서 이동할 건지 지정
+                      → _self  : 현재 창에서 (기본값)
+                      → _blank : 새 창에서 
+    -->
+
+    <ul>
+      <li id="first-item">
+        <a href="/lecture/01_html.html" target="_blank"
+          >1강. html에 대해서...</a
+        >
+      </li>
+      <li>
+        <a href="/lecture/02_text.html" target="_self">2강. 텍스트 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/03_list.html">3강. 리스트 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/04_table.html">4강. 테이블 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/05_section.html">5강. 영역 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/06_image.html">6강. 이미지 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/07_media.html">7강. 미디어 관련 태그</a>
+      </li>
+      <li>
+        <a href="/lecture/08_link.html">8강. 링크 관련 태그</a>
+      </li>
+      <li>
+        <a href="/assets/images/animal10.jpg">동물 이미지 파일</a>
+      </li>
+
+      <h3>특정 사이트로 이동하는 링크</h3>
+      <li>
+        <a href="http://www.google.com">구글 사이트로 이동</a>
+      </li>
+      <li>
+        <a href="http://www.naver.com">
+          <img
+            src="/assets/images/naver_logo.png"
+            alt="네이버 로고 이미지입니다."
+            width="100"
+          />
+        </a>
+      </li>
+
+      <h3>특정 아이디로 이동하는 링크</h3>
+
+      <li>
+        <a href="#last-item">마지막으로 이동</a>
+      </li>
+      <div
+        style="width: 100%; height: 2000px; background-color: aliceblue"
+      ></div>
+      <li id="last-item">
+        <a href="#first-item">맨 위로 이동</a>
+      </li>
+    </ul>
+
+    <!--
+      * id 속성
+      1) 전역 속성 (global attributes, 모든 태그에 사용 가능한 속성)
+      2) 각 요소들의 식별자 역할을 수행
+      3) 같은 문서내에 동일한 id 속성의 요소가 존재해서는 안됨 
+
+      href="#abc" : 클릭시 id속성이 abc인 요소의 위치로 이동됨 
+    -->
+  </body>
+</html>
