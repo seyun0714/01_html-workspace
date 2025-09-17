@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 관련 태그</title>
+    <style>
+      html,
+      body,
+      img {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      * 경로 제시 
+      1) 절대 경로
+          C:/dev/workspaces/assets/image/flower1.png
+      2) 상대 경로 
+          dev
+          ㄴ workspaces            : 상위/상위 디렉토리 (../..)
+              ㄴ 01_html-workspace : 상위 디렉토리 (..)
+                  ㄴ lecture 📌    : 현재 디렉토리 (.)
+              ㄴ assets            : 정적 자원 디렉토리 (../../assets)
+                  ㄴ image         : 이미지 디렉토리 (../../assets/image)
+    -->
+    <!-- <h1>이미지 관련 태그</h1> -->
+
+    <!--
+      * <img>
+      1) 이미지 표현 태그
+      2) 인라인 요소 
+      3) 종료태그가 별도로 없음
+      4) 형식
+      <img src="" alt="" width="px|%" height="px|%">
+      5) 주요 속성
+      → src    : 이미지 파일 경로
+      → alt    : 이미지를 찾을 수 없을 경우 대체 텍스트 문구 
+      → width  : 이미지 표현 너비 (높이도 같이 조정됨)
+      → height : 이미지 표현 높이 (너비도 같이 조정됨)
+    -->
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100dvh;
+      "
+    >
+      <img
+        width="100%"
+        height="100%"
+        src="../assets/images/architecture1.jpg"
+        alt="롯데월드몰 사진"
+      />
+    </div>
+
+    <h3>고정크기 (px) : 화면사이즈(상위요소)가 조정되어도 크기는 고정</h3>
+    <img src="../assets//images/flower1.jpg" width="200px" height="300px" />
+    <img src="../assets//images/flower2.jpg" width="200px" height="300px" />
+    <img src="../assets//images/flower3.jpg" width="200px" height="300px" />
+    <img src="../assets//images/flower4.jpg" width="200px" height="300px" />
+    <img src="../assets//images/flower5.jpg" width="200px" height="300px" />
+
+    <h3>가변크기 (%) : 화면사이즈(상위요소)가 조정되면 크기가 같이 조정</h3>
+    <img src="../assets//images/flower1.jpg" width="20%" height="30%" />
+    <img src="../assets//images/flower2.jpg" width="20%" height="30%" />
+    <img src="../assets//images/flower3.jpg" width="20%" height="30%" />
+    <img src="../assets//images/flower4.jpg" width="20%" height="30%" />
+    <img src="../assets//images/flower5.jpg" width="20%" height="30%" />
+  </body>
+</html>
