@@ -10,7 +10,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 30px;
       }
 
       .input-box {
@@ -305,51 +305,147 @@
           <input type="submit" />
         </form>
       </div>
-      <div class="long-space"></div>
-    </div>
-    <!--
-      * type="radio"
-      1) 라디오버튼
-      2) 제시된 여러개의 값들 중 오로지 한개만을 선택할 수 있게 할때 사용
-      3) name 속성값이 동일한 것들끼리 하나의 그룹으로 묶임
-          → 그룹 내에 한가지만 선택 가능 
-      4) 제출(submit)시 checked(선택된) value값이 넘어감
-      
-      * type="checkbox"
-      1) 체크박스
-      2) 제시된 여러개의 값들 중 다수 선택 가능하게 할때 사용
-      3) 제출(submit)시 checked(선택된) value값들이 다수 넘어감
-    -->
+      <!--
+        * type="radio"
+        1) 라디오버튼
+        2) 제시된 여러개의 값들 중 오로지 한개만을 선택할 수 있게 할때 사용
+        3) name 속성값이 동일한 것들끼리 하나의 그룹으로 묶임
+        → 그룹 내에 한가지만 선택 가능 
+        4) 제출(submit)시 checked(선택된) value값이 넘어감
+        
+        * type="checkbox"
+        1) 체크박스
+        2) 제시된 여러개의 값들 중 다수 선택 가능하게 할때 사용
+        3) 제출(submit)시 checked(선택된) value값들이 다수 넘어감
+      -->
 
-    <!--
-      * <select>, <option>
-      1) 목록 상자 태그
-      2) 여러 목록을 제시해서 그 중 선택 할 수 있도록 표현 가능 
-      3) 인라인 요소
-      4) 형식
+      <form action="server/test.do" class="input-box">
+        <h1>라디오, 체크박스 Input</h1>
+        <fieldset>
+          <legend>라디오 버튼</legend>
+          <span>
+            성별:
+            <input
+              type="radio"
+              id="gender-null"
+              name="gender"
+              value="X"
+              checked
+            />
+            <label for="gender-null">선택 안함</label>
+            <input type="radio" id="gender-male" name="gender" value="M" />
+            <label for="gender-male">남자</label>
+            <input type="radio" id="gender-female" name="gender" value="F" />
+            <label for="gender-female">여자</label>
+          </span>
+        </fieldset>
+
+        <fieldset>
+          <legend>체크 박스</legend>
+          <span>
+            취미:
+            <input type="checkbox" id="reading" value="reading" name="hobby" />
+            <label for="reading">독서</label>
+            <input type="checkbox" id="sports" value="sports" name="hobby" />
+            <label for="sports">운동</label>
+            <input type="checkbox" id="movie" value="movie" name="hobby" />
+            <label for="movie">영화</label>
+          </span>
+        </fieldset>
+        <input type="submit" value="등록" />
+      </form>
+
+      <!--
+        * <select>, <option>
+          1) 목록 상자 태그
+          2) 여러 목록을 제시해서 그 중 선택 할 수 있도록 표현 가능 
+          3) 인라인 요소
+          4) 형식
           <select>
             <option value="">목록1</option>
             <option value="">목록2</option>
             <option value="">목록3</option>
           </select>
-      5) 주요 속성
+          5) 주요 속성
           → selected : option 요소에 선택 효과를 주는 속성
           → value
-            → option요소에 value 속성이 없을 경우 텍스트가 value값임
-            → value속성이 있을 경우 value 속성값이 value값임
+          → option요소에 value 속성이 없을 경우 텍스트가 value값임
+          → value속성이 있을 경우 value 속성값이 value값임
+          
+          * <datalist>
+            1) 콤보 상자 태그 (입력란 + 목록 상자)
+            2) 사용자가 직접 입력도 할 수 있고 목록 중 선택도 가능하게 표현 가능
+            3) 인라인 요소
+            4) HTML5부터 사용 가능
+            5) 형식
+            <input type="" list="datalist아이디">
+            <datalist id="아이디">
+              <option></option>
+              <option></option>
+              <option></option>
+            </datalist>
+          -->
 
-      * <datalist>
-      1) 콤보 상자 태그 (입력란 + 목록 상자)
-      2) 사용자가 직접 입력도 할 수 있고 목록 중 선택도 가능하게 표현 가능
-      3) 인라인 요소
-      4) HTML5부터 사용 가능
-      5) 형식
-          <input type="" list="datalist아이디">
-          <datalist id="아이디">
-            <option></option>
-            <option></option>
-            <option></option>
-          </datalist>
-    -->
+      <form class="input-box">
+        <h1>select와 datalist</h1>
+        <fieldset>
+          <legend>일반목록상자</legend>
+          <span>
+            국가번호:
+            <select name="countryNo" id="">
+              <option value="01">가나 +01</option>
+              <option value="02">가봉 +02</option>
+              <option value="82" selected>한국 +82</option>
+              <option value="99">일본 +99</option>
+            </select>
+          </span>
+        </fieldset>
+        <fieldset>
+          <legend>콤보 상자</legend>
+          <span>
+            이메일:
+            <input type="text" size="10" name="user-email-id" /> @
+            <input
+              type="text"
+              size="10"
+              list="domainList"
+              name="user-email-domain"
+            />
+            <datalist id="domainList">
+              <option>naver.com</option>
+              <option>gmail.com</option>
+              <option>kakao.com</option>
+            </datalist>
+          </span>
+        </fieldset>
+        <input type="submit" />
+      </form>
+
+      <form class="input-box" method="get">
+        <h1>기타 Input</h1>
+        <span>
+          색상:
+          <input type="color" name="color" />
+        </span>
+        <span>
+          첨부파일:
+          <input type="file" name="file" />
+        </span>
+        <span>
+          숨김정보:
+          <input type="hidden" name="hidden" value="hello world" />
+        </span>
+        <button type="reset">초기화</button>
+        <button type="submit">제출</button>
+        <button type="button" onclick="refresh()">새로고침</button>
+      </form>
+
+      <div class="long-space"></div>
+    </div>
   </body>
+  <script>
+    function refresh() {
+      window.location.reload();
+    }
+  </script>
 </html>
